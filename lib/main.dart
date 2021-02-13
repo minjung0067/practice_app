@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 치고 fm 치면 자동 완성
 //=> 코딩을 간결하게 하기 위한 기구
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue //특정 색 계열의 음영들을 기본 색으로 사용하겠다
       ),
-    home: MyHomePage(),//앱이 정상적으로 실행되었을 때 가장 먼저 보여지는 경로
+    home: MyHomePage(),//앱이 정상적으로 실행되었을 때 가장 먼저 보여지는 경로, 이거 없으면 암것도 안 뜸
     );
   }
 }
@@ -23,17 +24,21 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(        //앱 화면에 다양한 요소 배치할 수 있게 하는 빈 도화지 !~! 필수적임
       appBar: AppBar(
       title: Text('연습용'),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
+        elevation: 0.0,  //앱 바가 떠 있는 효과
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, //앱스크린 내 정렬
           children: <Widget>[
             Text('Hello'),
             Text('Hello'),
             Text('Hello'),
           ],
-        ),
-      ), //가장 중요한 요소
-    );
+      ),
+      )
+    );//가장 중요한 요소
   }
 }
 
